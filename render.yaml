@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: sign-data-collection-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: PGSSLMODE
+        value: require
+      - key: TOKEN_ENCRYPTION_KEY
+        sync: false
+      - key: STORAGE_BACKEND
+        value: drive
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://YOUR-PAGES-DOMAIN.example.com/api/storage/drive/callback
+      - key: COOKIE_SECURE
+        value: true
+      - key: COOKIE_SAMESITE
+        value: none
+      - key: CORS_ORIGINS
+        value: https://YOUR-PAGES-DOMAIN.example.com

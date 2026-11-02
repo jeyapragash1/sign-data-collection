@@ -1,0 +1,10 @@
+.env
+private-data/
+backend/private-data/
+.venv/
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+*.tsbuildinfo
+.neon

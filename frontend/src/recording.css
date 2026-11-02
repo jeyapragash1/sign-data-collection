@@ -1,0 +1,434 @@
+/* Sign Language Recording Studio Styles */
+
+.studio-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.studio-prompt-card {
+  border-top: 4px solid #17644d;
+}
+
+.prompt-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.domain-badge {
+  background: #e4f2e9;
+  color: #175e46;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.prompt-code-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5c7063;
+}
+
+.prompt-progress-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-uploaded-badge {
+  background: #f1f6f2;
+  border: 1px solid #d0ded4;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2e5942;
+}
+
+.sign-instruction-heading {
+  margin: 16px 0 10px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a4233;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.studio-translations {
+  margin: 8px 0 16px 0;
+  background: #fbfdfb;
+  border: 2px solid #e1eee5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.primary-prompt-line {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #d5e5da;
+}
+
+.framing-notice-pill {
+  background: #f5f8f6;
+  border: 1px solid #dbe6de;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #3b5848;
+}
+
+/* Studio Camera & Live View */
+.studio-camera-card {
+  position: relative;
+}
+
+.studio-camera {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  background: #11221d;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.studio-camera video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.camera-offline-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #b0c4b6;
+  font-size: 15px;
+}
+
+/* Countdown Overlay */
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 30, 25, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+
+.countdown-number {
+  font-size: 88px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+.countdown-overlay p {
+  color: #d6e8dc;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+@keyframes countdownPulse {
+  0% { transform: scale(1.15); opacity: 0.9; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Recording Overlay */
+.recording-pill-overlay {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(179, 38, 30, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+.rec-dot {
+  animation: recBlink 1s infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes recBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.rec-timer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Studio Actions */
+.studio-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-start-record {
+  background: #17644d;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(23, 100, 77, 0.25);
+}
+
+.btn-start-record:hover {
+  background: #11503e;
+  transform: translateY(-1px);
+}
+
+.btn-stop-record {
+  background: #b93838;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: stopPulse 1.5s infinite;
+}
+
+@keyframes stopPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(185, 56, 56, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(185, 56, 56, 0); }
+}
+
+.btn-cancel-countdown {
+  min-height: 46px;
+}
+
+.camera-aux-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+/* Review Mode */
+.review-studio-box {
+  background: #fbfdfb;
+  border: 2px solid #287a5c;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.review-title {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #134d3a;
+}
+
+.review-subtext {
+  margin: 0;
+  font-size: 14px;
+  color: #3b5849;
+}
+
+.review-player-wrapper {
+  background: #0f201b;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.review-player {
+  max-width: 100%;
+  max-height: 460px;
+  width: 100%;
+  background: #0f201b;
+}
+
+.review-decision-actions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.btn-upload-next {
+  background: #17644d;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 16px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 2;
+  min-width: 260px;
+  border: 0;
+  transition: all 0.15s ease;
+  box-shadow: 0 3px 10px rgba(23, 100, 77, 0.3);
+}
+
+.btn-upload-next:hover {
+  background: #104e3c;
+  transform: translateY(-1px);
+}
+
+.btn-rerecord {
+  background: #ffffff;
+  color: #a83636;
+  border: 2px solid #df9c9c;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 200px;
+  transition: all 0.15s ease;
+}
+
+.btn-rerecord:hover {
+  background: #fdf5f5;
+  border-color: #b93838;
+}
+
+.note-center {
+  text-align: center;
+  margin-top: 14px;
+  color: #637a6c;
+}
+
+/* Navigation Row */
+.studio-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e1eae3;
+}
+
+.nav-index-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3b5246;
+}
+
+/* Consent Quick Banner */
+.consent-quick-banner {
+  background: #eef7f2;
+  border: 2px solid #badcc8;
+  margin-bottom: 20px;
+}
+
+.consent-quick-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.consent-quick-content h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #175e46;
+}
+
+.consent-quick-content p {
+  margin: 0;
+  font-size: 13px;
+  color: #385947;
+}
+
+.consent-quick-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-agree {
+  background: #17644d;
+  color: white;
+  font-weight: 700;
+}
+
+/* Upload Progress Bar */
+.uploading-progress-box {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e2ede5;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #17644d;
+  transition: width 0.2s ease;
+}
+
+/* Batch Status Row */
+.batch-status-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #eef2ef;
+  flex-wrap: wrap;
+}
+
+.batch-upload-info {
+  font-size: 13px;
+  font-weight: 600;
+  color: #385b48;
+}
+
+.complete-btn {
+  margin-left: auto;
+}

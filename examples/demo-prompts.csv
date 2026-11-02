@@ -1,0 +1,11 @@
+code,tamil,english,sinhala,domain,status,intent,action,object,negation,quantity,time,location,exception_note
+H001,உங்கள் பெயரை இங்கே பதிவு செய்யுங்கள்.,Register your name here.,ඔබගේ නම මෙහි ලියාපදිංචි කරන්න.,hospital,draft,registration,register,name,,,,here,
+H002,தயவுசெய்து உங்கள் அடையாள அட்டையைக் காட்டுங்கள்.,Please show your identity card.,කරුණාකර ඔබගේ හැඳුනුම්පත පෙන්වන්න.,hospital,draft,identification,show,identity card,,,,,
+H003,மருத்துவரைச் சந்திக்க இங்கே காத்திருக்கவும்.,Wait here to see the doctor.,වෛද්‍යවරයා හමුවීමට මෙහි රැඳී සිටින්න.,hospital,draft,waiting,wait,doctor appointment,,,,here,
+H004,உங்கள் மருத்துவ அறிக்கையை எடுத்து வாருங்கள்.,Bring your medical report.,ඔබගේ වෛද්‍ය වාර්තාව රැගෙන එන්න.,hospital,draft,documents,bring,medical report,,,,,
+T001,யாழ்ப்பாணம் செல்லும் பேருந்து எப்போது வரும்?,When will the bus to Jaffna arrive?,යාපනයට යන බස් රථය පැමිණෙන්නේ කවදාද?,transport,draft,arrival enquiry,arrive,bus,,,unspecified,Jaffna,
+T002,எனக்கு இரண்டு பயணச்சீட்டுகள் வேண்டும்.,I need two tickets.,මට ප්‍රවේශපත්‍ර දෙකක් අවශ්‍යයි.,transport,draft,ticket request,request,tickets,,two,,,
+T003,இந்தப் பேருந்தில் இப்போது ஏற வேண்டாம்.,Do not board this bus now.,දැන් මෙම බස් රථයට ගොඩ නොවන්න.,transport,draft,boarding restriction,board,this bus,do not,,now,,
+B001,தயவுசெய்து இந்தப் படிவத்தை நிரப்புங்கள்.,Please fill in this form.,කරුණාකර මෙම පෝරමය සම්පූර්ණ කරන්න.,bank,draft,form completion,fill in,this form,,,,,
+B002,உங்கள் வங்கிக் கணக்கு எண்ணைக் குறிப்பிடுங்கள்.,Provide your bank account number.,ඔබගේ බැංකු ගිණුම් අංකය සඳහන් කරන්න.,bank,draft,account identification,provide,account number,,,,,
+B003,பணத்தை இந்தக் கவுண்டரில் செலுத்துங்கள்.,Pay the money at this counter.,මුදල් මෙම කවුන්ටරයට ගෙවන්න.,bank,draft,payment instruction,pay,money,,,,this counter,
