@@ -30,6 +30,27 @@ DOMAINS={'hospital','transport','bank'}
 MAX_BYTES=int(os.environ.get('MAX_UPLOAD_MB','150'))*1024*1024
 for folder in ('recordings','temporary','exports'): (ROOT/folder).mkdir(exist_ok=True)
 migrate()
+
+def bootstrap():
+    try:
+        with Session() as db:
+            admin_user = db.scalar(select(User).where(User.role == 'admin'))
+            if not admin_user:
+                admin_user = User(
+                    code='ADMIN',
+                    password=passwords.hash('test-password-123'),
+                    role='admin',
+                    active=True
+                )
+                db.add(admin_user)
+                db.commit()
+            if not db.scalar(select(func.count()).select_from(Version)):
+                from .manage import seed_demo_data
+                seed_demo_data(db, 20)
+    except Exception as e:
+        print(f"Bootstrap note: {e}")
+
+bootstrap()
 def db_dep():
     with Session() as db: yield db
 
